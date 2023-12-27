@@ -3,7 +3,6 @@ from goapy import Planner, Action_List
 if __name__ == '__main__':
 	import time
 
-
 	_world = Planner('hungry', 'has_food', 'in_kitchen', 'tired', 'in_bed')
 	_world.set_start_state(hungry=True, has_food=False, in_kitchen=False, tired=True, in_bed=False)
 	_world.set_goal_state(tired=False)
@@ -33,6 +32,6 @@ if __name__ == '__main__':
 	_took_time = time.time() - _t
 
 	for path in _path:
-		print _path.index(path)+1, path['name']
+		print(_path.index(path)+1, path['name'])
 
-	print '\nTook:', _took_time
+	print('\nTook:', _took_time)
