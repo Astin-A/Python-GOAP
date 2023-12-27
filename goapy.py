@@ -193,7 +193,7 @@ def walk_path(path):
 			node = path['nodes'][_lowest['node']]
 
 		else:
-			return []
+			return
 		
 		################################
 		##Remove node with lowest rank##
@@ -206,13 +206,13 @@ def walk_path(path):
 		#######################################
 		
 		if conditions_are_met(node['state'], path['goal']):
-			_path = [{'name': 'goal', 'state': path['goal']}]
+			_path = []
 
 			while node['p_id']:
 				_path.append(node)
+				
 				node = path['nodes'][node['p_id']]
 			
-			_path.append(node)
 			_path.reverse()
 			
 			return _path
