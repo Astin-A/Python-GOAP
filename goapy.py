@@ -121,7 +121,7 @@ def distance_to_state(state_1, state_2):
 		
 		if not _value == state_2[key]:
 			_score += 1
-	
+
 	return _score
 
 def conditions_are_met(state_1, state_2):
@@ -210,7 +210,7 @@ def walk_path(path):
 
 			while node['p_id']:
 				_path.append(node)
-				
+
 				node = path['nodes'][node['p_id']]
 			
 			_path.reverse()
@@ -244,9 +244,6 @@ def walk_path(path):
 				_value = path['reactions'][action_name][key]
 
 				if _value == -1:
-					continue
-
-				if _c_node['state'][key] == -1:
 					continue
 
 				_c_node['state'][key] = _value
